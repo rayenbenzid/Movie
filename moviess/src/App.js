@@ -4,18 +4,17 @@ import Login from './component/Login';
 import Home from './component/Home';
 import Navbar from './component/Navbar';
 import MovieList from './component/MovieList';
+import { Route, Routes } from 'react-router-dom';
 
 
 const App = () => {
   const [page, setpage] = useState(0)
   return (
     <div>
-      {page==0?<Login setpage={setpage} />:<Home setpage={setpage}/>}
-      
-      
-     
-      
-
+      <Routes>
+        <Route path='/' element={<Login/>} />
+        <Route path='/rayen' element={<Home/>} />
+      </Routes>
     </div>
   )
 }

@@ -49,11 +49,17 @@ const Home = ({setpage}) => {
         },
       ]);
 
-
+const [newmovie, setnewmovie] = useState({
+  name:"",
+  image:"",
+  description:"",
+  rate:0
+})
+const addmovie=()=>setmovies([...movies,newmovie])
       const [test, settest] = useState(0)      
   return (
     <div>
-      <Navbar setsearch={setsearch} setpage={setpage} />
+      <Navbar addmovie={addmovie} newmovie={newmovie} setnewmovie={setnewmovie} setsearch={setsearch} setpage={setpage} />
       <button onClick={()=>settest(test+1)} >Click</button>
       <MovieList movies={movies} search={search}  />
     </div>
